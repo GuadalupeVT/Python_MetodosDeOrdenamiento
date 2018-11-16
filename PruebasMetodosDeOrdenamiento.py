@@ -21,13 +21,43 @@ def ordenamientoBurbuja0(numeros):
                 numeros[j]=aux
                 intercambios=intercambios+1
             recorridos=recorridos+1
-        elapsed_time = time() - start_time
+    elapsed_time = time() - start_time
     print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
     print ("Recoridos: "+str (recorridos))
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
     print numeros
 
+
+def ordenamientoBurbuja1(numeros):
+    comparaciones=0
+    intercambios=0
+    recorridos=0
+    start_time = time()
+    for i in range(2,len(numeros)):
+        for j in range(0,len(numeros)-i):
+            comparaciones=comparaciones+1
+            if numeros[j]>numeros[j+1]:
+                aux=numeros[j]
+                numeros[j]=numeros[j+1]
+                numeros[j+1]=aux
+                intercambios=intercambios+1
+            recorridos=recorridos+1
+    elapsed_time = time() - start_time
+    print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
+    print ("Recoridos: "+str (recorridos))
+    print ("Intercambios: "+str (intercambios))
+    print ("Comparaciones: "+str (comparaciones))
+    print numeros
+    
+    
+def ordenamientoBurbuja2(numeros):
+    comparaciones=0
+    intercambios=0
+    recorridos=0
+    start_time = time()
+    
+    
 def ordenamientoPorSeleccion(numeros):
     comparaciones=0
     intercambios=0
