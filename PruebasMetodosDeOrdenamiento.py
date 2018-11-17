@@ -5,7 +5,7 @@ Created on 16/11/2018
 '''
 from time import time
 import random
-
+import copy
 
 def ordenamientoBurbuja0(numeros):
     comparaciones=0
@@ -157,14 +157,14 @@ while(menu!=4):
     print "3. Ordenamiento Insercion"
     menu=int(raw_input("4. Salir"))
     if menu==1:
-        copiaVector1 = arregloDesordenado1.copy()
-        copiaVector2 = arregloDesordenado2.copy()
-        copiaVector3 = arregloDesordenado3.copy()
-        copiaVector4 = arregloDesordenado4.copy()
+        copiaVector1 = copy.copy(arregloDesordenado1)
+        copiaVector2 = copy.copy(arregloDesordenado2)
+        copiaVector3 = copy.copy(arregloDesordenado3)
+        copiaVector4 = copy.copy(arregloDesordenado4)
         print "\n==================ORDENAMIENTO CON BURBUJA===================="
         print "1. Burbuja0"
         print "2. Burbuja1"
-        menu=int(raw_input("3. Burbuja2"))  
+        submenu=int(raw_input("3. Burbuja2"))  
         if submenu==1:
             print "*********Burbuja0*********"
             print "*************Arreglo con 1,000 datos************"
@@ -222,10 +222,10 @@ while(menu!=4):
         else:
             print "Opcion incorrecta!!"
     elif menu==2:
-        copiaVector5 = arregloDesordenado1.copy()
-        copiaVector6 = arregloDesordenado2.copy()
-        copiaVector7 = arregloDesordenado3.copy()
-        copiaVector8 = arregloDesordenado4.copy()
+        copiaVector5 = copy.copy(arregloDesordenado1)
+        copiaVector6 = copy.copy(arregloDesordenado2)
+        copiaVector7 = copy.copy(arregloDesordenado3)
+        copiaVector8 = copy.copy(arregloDesordenado4)
         print "\n==================ORDENAMIENTO CON SELECCION===================="
         print "*************Arreglo con 1,000 datos************"
         print "Vector original: "
@@ -244,10 +244,10 @@ while(menu!=4):
         print (copiaVector8)
         ordenamientoPorSeleccion(copiaVector8)   
     elif menu==3:
-        copiaVector9 = arregloDesordenado1.copy()
-        copiaVector10 = arregloDesordenado2.copy()
-        copiaVector11= arregloDesordenado3.copy()
-        copiaVector12= arregloDesordenado4.copy()
+        copiaVector9 = copy.copy(arregloDesordenado1)
+        copiaVector10 = copy.copy(arregloDesordenado2)
+        copiaVector11= copy.copy(arregloDesordenado3)
+        copiaVector12= copy.copy(arregloDesordenado4)
         print "\n==================ORDENAMIENTO POR INSERCION===================="
         print "*************Arreglo con 1,000 datos************"
         print "Vector original: "
@@ -265,5 +265,7 @@ while(menu!=4):
         print "Vector original: "
         print (copiaVector12)
         ordenamientoPorInsercion(copiaVector12)
+    elif menu==4:
+        print "Saliendo..."
     else: print"Opcion incorrecta!!"
     
