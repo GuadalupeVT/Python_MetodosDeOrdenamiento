@@ -34,8 +34,8 @@ def ordenamientoBurbuja1(numeros):
     intercambios=0
     recorridos=0
     start_time = time()
-    for i in range(2,len(numeros)):
-        for j in range(0,len(numeros)-i):
+    for i in range(2,len(numeros)+1):
+        for j in range(0,len(numeros)-i+1):
             comparaciones=comparaciones+1
             if numeros[j]>numeros[j+1]:
                 aux=numeros[j]
@@ -51,7 +51,6 @@ def ordenamientoBurbuja1(numeros):
     print numeros
     
 
- 
 def ordenamientoBurbuja2(numeros):
     comparaciones=0
     intercambios=0
@@ -59,10 +58,10 @@ def ordenamientoBurbuja2(numeros):
     i=1
     ordenado=False
     start_time = time()
-    while (i<len(numeros) and ordenado==False):
+    while (i<len(numeros)+1 and ordenado==False):
         i=i+1
         ordenado=True
-        for j in range(0,len(numeros)-i) :
+        for j in range(0,len(numeros)-i+1) :
             comparaciones=comparaciones+1
             if numeros[j]>numeros[j+1]:
                 ordenado=False
@@ -77,6 +76,12 @@ def ordenamientoBurbuja2(numeros):
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
     print numeros
+    
+    
+  
+
+        
+    
     
     
 def ordenamientoPorSeleccion(numeros):
@@ -103,6 +108,7 @@ def ordenamientoPorSeleccion(numeros):
     print ("Comparaciones: "+str (comparaciones))
     print numeros
     
+#Si se implementa Burbuja3 en Python queda como Burbuja2
 
 def ordenamientoPorInsercion(numeros):
     comparaciones=0
@@ -142,4 +148,122 @@ arregloDesordenado4 = [0]  * 1000000
 for i in range(1000000):
     arregloDesordenado4[i] = random.randint(0, 100)
     
-ordenamientoBurbuja2(arregloDesordenado1)
+menu=0
+submenu=0
+while(menu!=4):
+    print "-------------------MENU----------------------"
+    print "1. Ordenamiento Burbuja"
+    print "2. Ordenamiento Seleccion"
+    print "3. Ordenamiento Insercion"
+    menu=int(raw_input("4. Salir"))
+    if menu==1:
+        copiaVector1 = arregloDesordenado1.copy()
+        copiaVector2 = arregloDesordenado2.copy()
+        copiaVector3 = arregloDesordenado3.copy()
+        copiaVector4 = arregloDesordenado4.copy()
+        print "\n==================ORDENAMIENTO CON BURBUJA===================="
+        print "1. Burbuja0"
+        print "2. Burbuja1"
+        menu=int(raw_input("3. Burbuja2"))  
+        if submenu==1:
+            print "*********Burbuja0*********"
+            print "*************Arreglo con 1,000 datos************"
+            print "Vector original: "
+            print (copiaVector1)
+            ordenamientoBurbuja0(copiaVector1)
+            print "*************Arreglo con 10,000 datos************"
+            print "Vector original: "
+            print (copiaVector2)
+            ordenamientoBurbuja0(copiaVector2)
+            print "*************Arreglo con 100,000 datos************"
+            print "Vector original: "
+            print (copiaVector3)
+            ordenamientoBurbuja0(copiaVector3)
+            print "*************Arreglo con 1,000,000 datos************"
+            print "Vector original: "
+            print (copiaVector4)
+            ordenamientoBurbuja0(copiaVector4)
+        elif submenu==2:
+            print "*********Burbuja1*********"
+            print "*************Arreglo con 1,000 datos************"
+            print "Vector original: "
+            print (copiaVector1)
+            ordenamientoBurbuja1(copiaVector1)
+            print "*************Arreglo con 10,000 datos************"
+            print "Vector original: "
+            print (copiaVector2)
+            ordenamientoBurbuja1(copiaVector2)
+            print "*************Arreglo con 100,000 datos************"
+            print "Vector original: "
+            print (copiaVector3)
+            ordenamientoBurbuja1(copiaVector3)
+            print "*************Arreglo con 1,000,000 datos************"
+            print "Vector original: "
+            print (copiaVector4)
+            ordenamientoBurbuja1(copiaVector4)
+        elif submenu==3:
+            print "*********Burbuja2*********"
+            print "*************Arreglo con 1,000 datos************"
+            print "Vector original: "
+            print (copiaVector1)
+            ordenamientoBurbuja2(copiaVector1)
+            print "*************Arreglo con 10,000 datos************"
+            print "Vector original: "
+            print (copiaVector2)
+            ordenamientoBurbuja2(copiaVector2)
+            print "*************Arreglo con 100,000 datos************"
+            print "Vector original: "
+            print (copiaVector3)
+            ordenamientoBurbuja2(copiaVector3)
+            print "*************Arreglo con 1,000,000 datos************"
+            print "Vector original: "
+            print (copiaVector4)
+            ordenamientoBurbuja2(copiaVector4)
+        else:
+            print "Opcion incorrecta!!"
+    elif menu==2:
+        copiaVector5 = arregloDesordenado1.copy()
+        copiaVector6 = arregloDesordenado2.copy()
+        copiaVector7 = arregloDesordenado3.copy()
+        copiaVector8 = arregloDesordenado4.copy()
+        print "\n==================ORDENAMIENTO CON SELECCION===================="
+        print "*************Arreglo con 1,000 datos************"
+        print "Vector original: "
+        print (copiaVector5)
+        ordenamientoPorSeleccion(copiaVector5)
+        print "*************Arreglo con 10,000 datos************"
+        print "Vector original: "
+        print (copiaVector6)
+        ordenamientoPorSeleccion(copiaVector6)
+        print "*************Arreglo con 100,000 datos************"
+        print "Vector original: "
+        print (copiaVector7)
+        ordenamientoPorSeleccion(copiaVector7)
+        print "*************Arreglo con 1,000,000 datos************"
+        print "Vector original: "
+        print (copiaVector8)
+        ordenamientoPorSeleccion(copiaVector8)   
+    elif menu==3:
+        copiaVector9 = arregloDesordenado1.copy()
+        copiaVector10 = arregloDesordenado2.copy()
+        copiaVector11= arregloDesordenado3.copy()
+        copiaVector12= arregloDesordenado4.copy()
+        print "\n==================ORDENAMIENTO POR INSERCION===================="
+        print "*************Arreglo con 1,000 datos************"
+        print "Vector original: "
+        print (copiaVector9)
+        ordenamientoPorInsercion(copiaVector9)
+        print "*************Arreglo con 10,000 datos************"
+        print "Vector original: "
+        print (copiaVector10)
+        ordenamientoPorInsercion(copiaVector10)
+        print "*************Arreglo con 100,000 datos************"
+        print "Vector original: "
+        print (copiaVector11)
+        ordenamientoPorInsercion(copiaVector11)
+        print "*************Arreglo con 1,000,000 datos************"
+        print "Vector original: "
+        print (copiaVector12)
+        ordenamientoPorInsercion(copiaVector12)
+    else: print"Opcion incorrecta!!"
+    
