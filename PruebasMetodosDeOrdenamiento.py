@@ -177,6 +177,46 @@ def ordenamientoQuicksort(numeros,primero,ultimo):
         pi = particion(numeros,primero,ultimo)
         ordenamientoQuicksort(numeros, primero, pi-1) 
         ordenamientoQuicksort(numeros, pi+1, ultimo)
+        
+def countingSort(arr, exp1,comparaciones): 
+    n = len(arr) 
+    output = [0] * (n)
+    count = [0] * (10) 
+    for i in range(0, n): 
+        index = (arr[i]/exp1) 
+        c=(index)%10
+        count[ int(c) ] += 1
+    for i in range(1,10): 
+        count[i] += count[i-1]
+    i = n-1
+    comparaciones=comparaciones+1
+    while i>=0: 
+        index = (arr[i]/exp1) 
+        output[ count[ int((index)%10) ] - 1] = arr[i] 
+        count[ int((index)%10) ] -= 1
+        i -= 1
+    i = 0
+    for i in range(0,len(arr)): 
+        arr[i] = output[i] 
+    return comparaciones   
+        
+def ordenamientoRadixSort(numeros):
+    comparaciones=0
+    intercambios=0
+    recorridos=0
+    start_time = time()
+    max1 = max(numeros) 
+    exp = 1
+    while max1/exp > 0: 
+        intercambios=intercambios+1
+        comparaciones=comparaciones+countingSort(numeros,exp,comparaciones)    
+        exp *= 10
+        recorridos=recorridos+1
+    elapsed_time = time() - start_time
+    print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
+    print ("Recoridos: "+str (recorridos))
+    print ("Intercambios: "+str (intercambios))
+    print ("Comparaciones: "+str (comparaciones))
     
 arregloDesordenado1 = [0]  * 1000
 for i in range(1000):
