@@ -162,6 +162,22 @@ def ordenamientoShellsort (numeros):
     print ("Comparaciones: "+str (comparaciones))
     print(numeros)
     
+def particion(numeros,primero,ultimo):
+    i = ( primero-1 ) 
+    pivote = numeros[ultimo]
+    for j in range(primero , ultimo):
+        if   numeros[j] <= pivote:
+            i = i+1 
+            numeros[i],numeros[j] = numeros[j],numeros[i]
+    numeros[i+1],numeros[ultimo] = numeros[ultimo],numeros[i+1] 
+    return ( i+1 )  
+    
+def ordenamientoQuicksort(numeros,primero,ultimo):
+    if primero < ultimo: 
+        pi = particion(numeros,primero,ultimo)
+        ordenamientoQuicksort(numeros, primero, pi-1) 
+        ordenamientoQuicksort(numeros, pi+1, ultimo)
+    
 arregloDesordenado1 = [0]  * 1000
 for i in range(1000):
     arregloDesordenado1[i] = random.randint(0, 100)
