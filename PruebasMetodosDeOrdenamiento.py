@@ -135,6 +135,33 @@ def ordenamientoPorInsercion(numeros):
     print ("Comparaciones: "+str (comparaciones))
     print numeros
     
+    
+def ordenamientoShellsort (numeros):
+    n=len(numeros)
+    gap=n//2
+    comparaciones=0
+    intercambios=0
+    recorridos=0
+    start_time = time()
+    while gap > 0:
+        for i in range(gap,n):
+            temp = numeros[i]
+            j = i 
+            comparaciones=comparaciones+1
+            while  j >= gap and numeros[j-gap] >temp:
+                numeros[j] = numeros[j-gap] 
+                j -= gap
+                intercambios=intercambios+1
+            numeros[j] = temp 
+            recorridos=recorridos+1
+        gap //= 2
+    elapsed_time = time() - start_time
+    print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
+    print ("Recoridos: "+str (recorridos))
+    print ("Intercambios: "+str (intercambios))
+    print ("Comparaciones: "+str (comparaciones))
+    print(numeros)
+    
 arregloDesordenado1 = [0]  * 1000
 for i in range(1000):
     arregloDesordenado1[i] = random.randint(0, 100)
