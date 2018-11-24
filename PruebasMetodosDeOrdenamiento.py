@@ -231,99 +231,106 @@ arregloDesordenado4 = [0]  * 1000000
 for i in range(1000000):
     arregloDesordenado4[i] = random.randint(0, 100)
     
+copiaVectorx = copy.copy(arregloDesordenado1)
+print (copiaVectorx)
+ordenamientoRadixSort(copiaVectorx)
+print (copiaVectorx)
 menu=0
 submenu=0
-while(menu!=4):
-    print "-------------------MENU----------------------"
-    print "1. Ordenamiento Burbuja"
-    print "2. Ordenamiento Seleccion"
-    print "3. Ordenamiento Insercion"
-    menu=int(raw_input("4. Salir"))
+while(menu!=7):
+    print ("-------------------MENU----------------------")
+    print ("1. Ordenamiento Burbuja")
+    print ("2. Ordenamiento Seleccion")
+    print ("3. Ordenamiento Insercion")
+    print ("4. Ordenamiento Shellsort") 
+    print ("5. Ordenamiento Quicksort")
+    print ("6. Ordenamiento Radix")
+    menu=int(_raw_input("7. Salir"))
     if menu==1:
         copiaVector1 = copy.copy(arregloDesordenado1)
         copiaVector2 = copy.copy(arregloDesordenado2)
         copiaVector3 = copy.copy(arregloDesordenado3)
         copiaVector4 = copy.copy(arregloDesordenado4)
-        print "\n==================ORDENAMIENTO CON BURBUJA===================="
-        print "1. Burbuja0"
-        print "2. Burbuja1"
-        submenu=int(raw_input("3. Burbuja2"))  
+        print ("\n==================ORDENAMIENTO CON BURBUJA====================")
+        print ("1. Burbuja0")
+        print ("2. Burbuja1")
+        submenu=int(_raw_input("3. Burbuja2"))  
         if submenu==1:
-            print "*********Burbuja0*********"
-            print "*************Arreglo con 1,000 datos************"
-            print "Vector original: "
+            print ("*********Burbuja0*********")
+            print ("*************Arreglo con 1,000 datos************")
+            print ("Vector original: ")
             print (copiaVector1)
             ordenamientoBurbuja0(copiaVector1)
-            print "*************Arreglo con 10,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 10,000 datos************")
+            print ("Vector original: ")
             print (copiaVector2)
             ordenamientoBurbuja0(copiaVector2)
-            print "*************Arreglo con 100,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 100,000 datos************")
+            print ("Vector original: ")
             print (copiaVector3)
             ordenamientoBurbuja0(copiaVector3)
-            print "*************Arreglo con 1,000,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 1,000,000 datos************")
+            print ("Vector original: ")
             print (copiaVector4)
             ordenamientoBurbuja0(copiaVector4)
         elif submenu==2:
-            print "*********Burbuja1*********"
-            print "*************Arreglo con 1,000 datos************"
-            print "Vector original: "
+            print ("*********Burbuja1*********")
+            print ("*************Arreglo con 1,000 datos************")
+            print ("Vector original: ")
             print (copiaVector1)
             ordenamientoBurbuja1(copiaVector1)
-            print "*************Arreglo con 10,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 10,000 datos************")
+            print ("Vector original: ")
             print (copiaVector2)
             ordenamientoBurbuja1(copiaVector2)
-            print "*************Arreglo con 100,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 100,000 datos************")
+            print ("Vector original: ")
             print (copiaVector3)
             ordenamientoBurbuja1(copiaVector3)
-            print "*************Arreglo con 1,000,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 1,000,000 datos************")
+            print ("Vector original: ")
             print (copiaVector4)
             ordenamientoBurbuja1(copiaVector4)
         elif submenu==3:
-            print "*********Burbuja2*********"
-            print "*************Arreglo con 1,000 datos************"
-            print "Vector original: "
+            print ("*********Burbuja2*********")
+            print ("*************Arreglo con 1,000 datos************")
+            print ("Vector original: ")
             print (copiaVector1)
             ordenamientoBurbuja2(copiaVector1)
-            print "*************Arreglo con 10,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 10,000 datos************")
+            print ("Vector original: ")
             print (copiaVector2)
             ordenamientoBurbuja2(copiaVector2)
-            print "*************Arreglo con 100,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 100,000 datos************")
+            print ("Vector original: ")
             print (copiaVector3)
             ordenamientoBurbuja2(copiaVector3)
-            print "*************Arreglo con 1,000,000 datos************"
-            print "Vector original: "
+            print ("*************Arreglo con 1,000,000 datos************")
+            print ("Vector original: ")
             print (copiaVector4)
             ordenamientoBurbuja2(copiaVector4)
         else:
-            print "Opcion incorrecta!!"
+            print ("Opcion incorrecta!!")
     elif menu==2:
         copiaVector5 = copy.copy(arregloDesordenado1)
         copiaVector6 = copy.copy(arregloDesordenado2)
         copiaVector7 = copy.copy(arregloDesordenado3)
         copiaVector8 = copy.copy(arregloDesordenado4)
-        print "\n==================ORDENAMIENTO CON SELECCION===================="
-        print "*************Arreglo con 1,000 datos************"
-        print "Vector original: "
+        print ("\n==================ORDENAMIENTO CON SELECCION====================")
+        print ("*************Arreglo con 1,000 datos************")
+        print ("Vector original: ")
         print (copiaVector5)
         ordenamientoPorSeleccion(copiaVector5)
-        print "*************Arreglo con 10,000 datos************"
-        print "Vector original: "
+        print ("*************Arreglo con 10,000 datos************")
+        print ("Vector original: ")
         print (copiaVector6)
         ordenamientoPorSeleccion(copiaVector6)
-        print "*************Arreglo con 100,000 datos************"
-        print "Vector original: "
+        print ("*************Arreglo con 100,000 datos************")
+        print ("Vector original: ")
         print (copiaVector7)
         ordenamientoPorSeleccion(copiaVector7)
-        print "*************Arreglo con 1,000,000 datos************"
-        print "Vector original: "
+        print ("*************Arreglo con 1,000,000 datos************")
+        print ("Vector original: ")
         print (copiaVector8)
         ordenamientoPorSeleccion(copiaVector8)   
     elif menu==3:
@@ -331,24 +338,113 @@ while(menu!=4):
         copiaVector10 = copy.copy(arregloDesordenado2)
         copiaVector11= copy.copy(arregloDesordenado3)
         copiaVector12= copy.copy(arregloDesordenado4)
-        print "\n==================ORDENAMIENTO POR INSERCION===================="
-        print "*************Arreglo con 1,000 datos************"
-        print "Vector original: "
+        print ("\n==================ORDENAMIENTO POR INSERCION====================")
+        print ("*************Arreglo con 1,000 datos************")
+        print ("Vector original: ")
         print (copiaVector9)
         ordenamientoPorInsercion(copiaVector9)
-        print "*************Arreglo con 10,000 datos************"
-        print "Vector original: "
+        print ("*************Arreglo con 10,000 datos************")
+        print ("Vector original: ")
         print (copiaVector10)
         ordenamientoPorInsercion(copiaVector10)
-        print "*************Arreglo con 100,000 datos************"
-        print "Vector original: "
+        print ("*************Arreglo con 100,000 datos************")
+        print ("Vector original: ")
         print (copiaVector11)
         ordenamientoPorInsercion(copiaVector11)
-        print "*************Arreglo con 1,000,000 datos************"
-        print "Vector original: "
+        print ("*************Arreglo con 1,000,000 datos************")
+        print ("Vector original: ")
         print (copiaVector12)
         ordenamientoPorInsercion(copiaVector12)
+        
     elif menu==4:
-        print "Saliendo..."
-    else: print"Opcion incorrecta!!"
+        copiaVector13 = copy.copy(arregloDesordenado1)
+        copiaVector14 = copy.copy(arregloDesordenado2)
+        copiaVector15= copy.copy(arregloDesordenado3)
+        copiaVector16= copy.copy(arregloDesordenado4)
+        print ("\n==================ORDENAMIENTO SHELLSORT====================")
+        print ("*************Arreglo con 1,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector13)
+        ordenamientoShellsort(copiaVector13)
+        print ("*************Arreglo con 10,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector14)
+        ordenamientoShellsort(copiaVector14)
+        print ("*************Arreglo con 100,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector15)
+        ordenamientoShellsort(copiaVector15)
+        print ("*************Arreglo con 1,000,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector16)
+        ordenamientoShellsort(copiaVector16)
+        
+    elif menu==5:
+        copiaVector17 = copy.copy(arregloDesordenado1)
+        copiaVector18 = copy.copy(arregloDesordenado2)
+        copiaVector19= copy.copy(arregloDesordenado3)
+        copiaVector20= copy.copy(arregloDesordenado4)
+        print ("\n==================ORDENAMIENTO QUICKSORT====================")
+        print ("*************Arreglo con 1,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector17)
+        start_time = time()
+        ordenamientoQuicksort(copiaVector17)
+        elapsed_time = time() - start_time
+        print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
+        print (copiaVector17)
+        print ("*************Arreglo con 10,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector18)
+        start_time = time()
+        ordenamientoQuicksort(copiaVector18)
+        elapsed_time = time() - start_time
+        print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
+        print (copiaVector18)
+        print ("*************Arreglo con 100,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector19)
+        start_time = time()
+        ordenamientoQuicksort(copiaVector19)
+        elapsed_time = time() - start_time
+        print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
+        print (copiaVector19)
+        print ("*************Arreglo con 1,000,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector20)
+        start_time = time()
+        ordenamientoQuicksort(copiaVector20)
+        elapsed_time = time() - start_time
+        print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
+        print (copiaVector20)
     
+    elif menu ==6:
+        copiaVector21 = copy.copy(arregloDesordenado1)
+        copiaVector22 = copy.copy(arregloDesordenado2)
+        copiaVector23= copy.copy(arregloDesordenado3)
+        copiaVector24= copy.copy(arregloDesordenado4)
+        print ("\n==================ORDENAMIENTO RADIXSORT====================")
+        print ("*************Arreglo con 1,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector21)
+        ordenamientoRadixSort(copiaVector21)
+        print (copiaVector21)
+        print ("*************Arreglo con 10,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector22)
+        ordenamientoRadixSort(copiaVector22)
+        print (copiaVector22)
+        print ("*************Arreglo con 100,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector23)
+        ordenamientoRadixSort(copiaVector23)
+        print (copiaVector23)
+        print ("*************Arreglo con 1,000,000 datos************")
+        print ("Vector original: ")
+        print (copiaVector24)
+        ordenamientoRadixSort(copiaVector24)
+        print (copiaVector24)
+        
+    elif menu==7:
+        print ("Saliendo...")
+    else: print("Opcion incorrecta!!")
