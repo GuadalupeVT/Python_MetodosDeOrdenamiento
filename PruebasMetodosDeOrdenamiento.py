@@ -267,6 +267,41 @@ def ordenamientoIntercalacion():
     print("Archivos combinados y ordenados correctamente")
     archivo3.close
 
+def mezclaNatural(arr): 
+    if len(arr) >1: 
+        mitad = len(arr)//2 
+        aux1 = arr[:mitad]   
+        aux2 = arr[mitad:] 
+        mezclaNatural(aux1) 
+        mezclaNatural(aux2)  
+  
+        i = j = k = 0
+
+        while i < len(aux1) and j < len(aux2): 
+            if aux1[i] < aux2[j]: 
+                arr[k] = aux1[i] 
+                i+=1
+            else: 
+                arr[k] = aux2[j] 
+                j+=1
+            k+=1
+          
+        while i < len(aux1): 
+            arr[k] = aux1[i] 
+            i+=1
+            k+=1
+          
+        while j < len(aux2): 
+            arr[k] = aux2[j] 
+            j+=1
+            k+=1
+
+def mostrar(arr): 
+    for i in range(len(arr)):         
+        print(arr[i],end=" ") 
+    print() 
+
+
 arregloDesordenado1 = [0]  * 1000
 for i in range(1000):
     arregloDesordenado1[i] = random.randint(0, 100)
@@ -282,7 +317,7 @@ for i in range(1000000):
     
 menu=0
 submenu=0
-while(menu!=11):
+while(menu!=10):
     print ("-------------------MENU----------------------")
     print("-----Ordenamiento interno------")
     print ("1. Ordenamiento Burbuja")
@@ -294,9 +329,8 @@ while(menu!=11):
     print("-----------Ordenamiento externo--------")
     print ("7. Intercalacion")
     print("8. Mezcla directa")
-    print ("9.Mezcla natural")
-    print("10. Tabla de eficiencia")
-    menu=int(input("11. Salir"))
+    print ("9. Mezcla natural")
+    menu=int(input("10. Salir"))
     if menu==1:
         copiaVector1 = copy.copy(arregloDesordenado1)
         copiaVector2 = copy.copy(arregloDesordenado2)
@@ -496,8 +530,10 @@ while(menu!=11):
         ordenamientoRadixSort(copiaVector24)
         print (copiaVector24)
     elif menu==7:
+        print ("*************Intercalacion************")
         ordenamientoIntercalacion()
     elif menu==8:
+        print("**************Mezcla directa************")
         randfile = open("Random.txt", "w")
         start = int(input('Ingresa el numero menor para los numeros aleatorios: '))
         end = int(input('Ingresa el numero mayor para los numeros aleatorios: '))
@@ -568,6 +604,17 @@ while(menu!=11):
         file.close()
         print('Nuneros ordenados: ', lst)
         print('Tiempo de proceso: {:.20f} seconds'.format(end_time-start_time))
+    
+    elif menu==9:
+        print("***************Mezcla natural****************")
+        archivo1=open("Archivo3.txt", "r")
+        lineaArchivo1=archivo1.readline() 
+        arr=lineaArchivo1.split(",")
+        archivo1.close
+        mostrar(arr) 
+        mezclaNatural(arr) 
+        mostrar(arr)
+        
     elif menu==11:
         print ("Saliendo...")
     else: print("Opcion incorrecta!!")
