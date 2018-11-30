@@ -531,7 +531,10 @@ while(menu!=10):
         print (copiaVector24)
     elif menu==7:
         print ("*************Intercalacion************")
+        start_time = time()
         ordenamientoIntercalacion()
+        elapsed_time = time() - start_time
+        print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
     elif menu==8:
         print("**************Mezcla directa************")
         randfile = open("Random.txt", "w")
@@ -557,9 +560,9 @@ while(menu!=10):
         with open("Random.txt", "r") as f:
             for line in f:
                 lst.append(int(line.strip()))
-        start_time = time.time()
+        start_time = time()
         selectionSort(lst)
-        end_time = time.time()
+        end_time = time()
         file = open("selectionSortResult","w")
         for x in lst:
             file.write(str(x)+"\n")
@@ -595,9 +598,9 @@ while(menu!=10):
         with open("Random.txt", "r") as f:
             for line in f:
                 lst.append(int(line.strip()))
-        start_time = time.time()
+        start_time = time()
         lst = merge_sort(lst)
-        end_time = time.time()
+        end_time =time()
         file = open("mergeSortResult","w")
         for x in lst:
             file.write(str(x)+"\n")
@@ -607,12 +610,15 @@ while(menu!=10):
     
     elif menu==9:
         print("***************Mezcla natural****************")
+        start_time = time()
         archivo1=open("Archivo3.txt", "r")
         lineaArchivo1=archivo1.readline() 
         arr=lineaArchivo1.split(",")
         archivo1.close
         mostrar(arr) 
-        mezclaNatural(arr) 
+        mezclaNatural(arr)
+        elapsed_time = time() - start_time
+        print("Tiempo de ejecucion: %.10f seconds." % elapsed_time)
         mostrar(arr)
         
     elif menu==11:
