@@ -211,7 +211,7 @@ def ordenamientoRadixSort(numeros):
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
         
-def intercalacion():
+def ordenamientoIntercalacion():
     archivo3=open ("ArchivoSalida.txt", "w")
     archivo1=open("Archivo1.txt", "r")
     archivo2=open("Archivo2.txt", "r")
@@ -495,7 +495,8 @@ while(menu!=11):
         print (copiaVector24)
         ordenamientoRadixSort(copiaVector24)
         print (copiaVector24)
-        
+    elif menu==7:
+        ordenamientoIntercalacion()
     elif menu==11:
         print ("Saliendo...")
     else: print("Opcion incorrecta!!")
