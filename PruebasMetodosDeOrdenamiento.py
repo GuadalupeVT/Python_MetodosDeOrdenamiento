@@ -497,7 +497,77 @@ while(menu!=11):
         print (copiaVector24)
     elif menu==7:
         ordenamientoIntercalacion()
+    elif menu==8:
+        randfile = open("Random.txt", "w")
+        start = int(input('Ingresa el numero menor para los numeros aleatorios: '))
+        end = int(input('Ingresa el numero mayor para los numeros aleatorios: '))
+        for i in range(int(input('¿Cuantos quieres generar?: '))):
+            line = str(random.randint(start, end))
+            randfile.write(line + '\n')
+            print(line)
+        randfile.close()
+        def swap(a, i, j):
+            (a[i], a[j]) = (a[j], a[i])
+        def selectionSort(a):
+            n = len(a)
+            for startIndex in range(n):
+                minIndex = startIndex
+                for ind in range(startIndex+1, n):
+                    if a[ind] < a[minIndex]:
+                        minIndex = ind
+            swap(a, startIndex, minIndex)
+
+        lst = []
+        with open("Random.txt", "r") as f:
+            for line in f:
+                lst.append(int(line.strip()))
+        start_time = time.time()
+        selectionSort(lst)
+        end_time = time.time()
+        file = open("selectionSortResult","w")
+        for x in lst:
+            file.write(str(x)+"\n")
+        file.close()
+        print('Numeros dados: ', lst)
+        def merge_sort(A):
+            n = len(A)
+            if n==1:
+                return A
+            mid = n//2   # floor division
+            L = merge_sort(A[:mid])
+            R = merge_sort(A[mid:])
+            return merge(L,R)
+
+        def merge(L,R):
+            i = 0
+            j = 0
+            answer = []
+            while i<len(L) and j<len(R):
+                if L[i]<R[j]:
+                    answer.append(L[i])
+                    i += 1
+                else:
+                    answer.append(R[j])
+                    j += 1
+            if i<len(L):
+                answer.extend(L[i:])
+            if j<len(R):
+                answer.extend(R[j:])
+            return answer
+
+        lst = []
+        with open("Random.txt", "r") as f:
+            for line in f:
+                lst.append(int(line.strip()))
+        start_time = time.time()
+        lst = merge_sort(lst)
+        end_time = time.time()
+        file = open("mergeSortResult","w")
+        for x in lst:
+            file.write(str(x)+"\n")
+        file.close()
+        print('Nuneros ordenados: ', lst)
+        print('Tiempo de proceso: {:.20f} seconds'.format(end_time-start_time))
     elif menu==11:
         print ("Saliendo...")
     else: print("Opcion incorrecta!!")
-    
