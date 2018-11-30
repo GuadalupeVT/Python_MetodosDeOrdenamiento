@@ -26,7 +26,7 @@ def ordenamientoBurbuja0(numeros):
     print ("Recoridos: "+str (recorridos))
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
-    print numeros
+    print (numeros)
 
 
 def ordenamientoBurbuja1(numeros):
@@ -48,7 +48,7 @@ def ordenamientoBurbuja1(numeros):
     print ("Recoridos: "+str (recorridos))
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
-    print numeros
+    print (numeros)
     
 
 def ordenamientoBurbuja2(numeros):
@@ -75,14 +75,7 @@ def ordenamientoBurbuja2(numeros):
     print ("Recoridos: "+str (recorridos))
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
-    print numeros
-    
-    
-  
-
-        
-    
-    
+    print (numeros)
     
 def ordenamientoPorSeleccion(numeros):
     comparaciones=0
@@ -106,7 +99,7 @@ def ordenamientoPorSeleccion(numeros):
     print ("Recoridos: "+str (recorridos))
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
-    print numeros
+    print (numeros)
     
 #Si se implementa Burbuja3 en Python queda como Burbuja2
 
@@ -133,9 +126,8 @@ def ordenamientoPorInsercion(numeros):
     print ("Recoridos: "+str (recorridos))
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
-    print numeros
-    
-    
+    print (numeros)
+
 def ordenamientoShellsort (numeros):
     n=len(numeros)
     gap=n//2
@@ -161,7 +153,7 @@ def ordenamientoShellsort (numeros):
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
     print(numeros)
-    
+   
 def particion(numeros,primero,ultimo):
     i = ( primero-1 ) 
     pivote = numeros[ultimo]
@@ -177,7 +169,8 @@ def ordenamientoQuicksort(numeros,primero,ultimo):
         pi = particion(numeros,primero,ultimo)
         ordenamientoQuicksort(numeros, primero, pi-1) 
         ordenamientoQuicksort(numeros, pi+1, ultimo)
-        
+  
+  
 def countingSort(arr, exp1,comparaciones): 
     n = len(arr) 
     output = [0] * (n)
@@ -217,7 +210,8 @@ def ordenamientoRadixSort(numeros):
     print ("Recoridos: "+str (recorridos))
     print ("Intercambios: "+str (intercambios))
     print ("Comparaciones: "+str (comparaciones))
-    
+        
+
 arregloDesordenado1 = [0]  * 1000
 for i in range(1000):
     arregloDesordenado1[i] = random.randint(0, 100)
@@ -231,21 +225,23 @@ arregloDesordenado4 = [0]  * 1000000
 for i in range(1000000):
     arregloDesordenado4[i] = random.randint(0, 100)
     
-copiaVectorx = copy.copy(arregloDesordenado1)
-print (copiaVectorx)
-ordenamientoRadixSort(copiaVectorx)
-print (copiaVectorx)
 menu=0
 submenu=0
-while(menu!=7):
+while(menu!=11):
     print ("-------------------MENU----------------------")
+    print("-----Ordenamiento interno------")
     print ("1. Ordenamiento Burbuja")
     print ("2. Ordenamiento Seleccion")
     print ("3. Ordenamiento Insercion")
     print ("4. Ordenamiento Shellsort") 
     print ("5. Ordenamiento Quicksort")
     print ("6. Ordenamiento Radix")
-    menu=int(_raw_input("7. Salir"))
+    print("-----------Ordenamiento externo--------")
+    print ("7. Intercalacion")
+    print("8. Mezcla directa")
+    print ("9.Mezcla natural")
+    print("10. Tabla de eficiencia")
+    menu=int(input("11. Salir"))
     if menu==1:
         copiaVector1 = copy.copy(arregloDesordenado1)
         copiaVector2 = copy.copy(arregloDesordenado2)
@@ -254,7 +250,7 @@ while(menu!=7):
         print ("\n==================ORDENAMIENTO CON BURBUJA====================")
         print ("1. Burbuja0")
         print ("2. Burbuja1")
-        submenu=int(_raw_input("3. Burbuja2"))  
+        submenu=int(input("3. Burbuja2"))  
         if submenu==1:
             print ("*********Burbuja0*********")
             print ("*************Arreglo con 1,000 datos************")
@@ -445,6 +441,7 @@ while(menu!=7):
         ordenamientoRadixSort(copiaVector24)
         print (copiaVector24)
         
-    elif menu==7:
+    elif menu==11:
         print ("Saliendo...")
     else: print("Opcion incorrecta!!")
+    
